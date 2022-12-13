@@ -35,7 +35,7 @@ def solve_lpp(lpp: LPP) -> None:
       "status": solution._solve_details._solve_status,
       "solution": {
         "x1": x1.solution_value,
-        "x2": x1.solution_value,
+        "x2": x2.solution_value,
         "objective": solution._objective
       }
     }
