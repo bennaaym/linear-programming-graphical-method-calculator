@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from solver import solve_lpp
 from model.lpp_model import LPP
+import json
 
 
 
@@ -22,3 +23,9 @@ def solve(lpp: LPP):
   return {
     "result": result,
   }
+
+@app.get("/examples")
+def get_examples():
+  with open("./db/examples.json") as file:
+    examples = json.load(file)
+    return examples

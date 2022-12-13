@@ -1,0 +1,202 @@
+{
+  "examples": [
+    {
+      "objective": "maximization",
+      "objective_function": {
+        "a": 60,
+        "b": 40
+      },
+      "constraints": [
+        {
+          "a": 4,
+          "b": 4,
+          "sign": ">=",
+          "y": 10
+        },
+        {
+          "a": 2,
+          "b": 1,
+          "sign": ">=",
+          "y": 4
+        },
+        {
+          "a": 6,
+          "b": 2,
+          "sign": "<=",
+          "y": 12
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "sign": ">=",
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "sign": ">=",
+          "y": 0
+        }
+      ]
+    },
+    {
+      "objective": "maximization",
+      "objective_function": {
+        "a": 6,
+        "b": 1
+      },
+      "constraints": [
+        {
+          "a": 2,
+          "b": 1,
+          "sign": ">=",
+          "y": 3
+        },
+        {
+          "a": -1,
+          "b": 1,
+          "sign": "<=",
+          "y": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "sign": ">=",
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "sign": ">=",
+          "y": 0
+        }
+      ]
+    },
+    {
+      "objective": "maximization",
+      "objective_function": {
+        "a": 1,
+        "b": 1
+      },
+      "constraints": [
+        {
+          "a": 1,
+          "b": 1,
+          "sign": "<=",
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "sign": ">=",
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "sign": ">=",
+          "y": 0
+        }
+      ]
+    },
+    {
+      "objective": "maximization",
+      "objective_function": {
+        "a": 1,
+        "b": 1
+      },
+      "constraints": [
+        {
+          "a": 1,
+          "b": 1,
+          "sign": "<=",
+          "y": 1
+        },
+        {
+          "a": -3,
+          "b": 1,
+          "sign": ">=",
+          "y": 3
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "sign": ">=",
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "sign": ">=",
+          "y": 0
+        }
+      ]
+    },
+    {
+      "objective": "maximization",
+      "objective_function": {
+        "a": 2,
+        "b": -1
+      },
+      "constraints": [
+        {
+          "a": 1,
+          "b": -1,
+          "sign": ">=",
+          "y": -1
+        },
+        {
+          "a": -0.5,
+          "b": 1,
+          "sign": "<=",
+          "y": -2
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "sign": ">=",
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "sign": ">=",
+          "y": 0
+        }
+      ]
+    },
+    {
+      "objective": "maximization",
+      "objective_function": {
+        "a": 6,
+        "b": 0
+      },
+      "constraints": [
+        {
+          "a": 1,
+          "b": -1,
+          "sign": ">=",
+          "y": -1
+        },
+        {
+          "a": -0.5,
+          "b": 1,
+          "sign": "<=",
+          "y": -2
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "sign": ">=",
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "sign": ">=",
+          "y": 0
+        }
+      ]
+    }
+  ]
+}
