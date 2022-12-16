@@ -40,7 +40,6 @@ export const compute = (originalCons) => {
     sliced.forEach((elem, j) => {
       let test = true;
       const result = getVariables(item, elem);
-      /* console.log(`iteration:${i}j=${j}`,result[0],result[1]) */
       if (result[0] < 0 || result[1] < 0) {
         test = false;
       } else {
@@ -81,7 +80,6 @@ export const compute = (originalCons) => {
     });
     if (test0) values.push({ x1: 0, x2: 0 });
   }
-  /* console.log(values) */
   return values;
 };
 
@@ -153,7 +151,6 @@ export const getPoints = (constraints, values) => {
           x1: 0,
           x2: getX2(item.a, item.b, item.y, 0),
         });
-        console.log('x2: ', getX2(item.a, item.b, item.y, 5));
         points[i].coordinates.push({
           x1: 5,
           x2: getX2(item.a, item.b, item.y, 5),

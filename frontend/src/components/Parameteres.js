@@ -40,7 +40,6 @@ const Parameteres = () => {
 
   useEffect(() => {
     if (selectedExample) {
-      console.log(predefinedExamples[selectedExample - 1].objective);
       setObjectiveType(
         predefinedExamples[selectedExample - 1].objective === 'maximization'
           ? 'Maximize'

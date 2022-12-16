@@ -42,7 +42,6 @@ function Chart({ data, values, extended }) {
 
   const CustomizedDot = (props) => {
     const { cx, cy, stroke, payload, value, name } = props;
-    console.log(payload);
     const point = values.find(
       (item) => payload.x1 === item.x1 && payload.x2 === item.x2
     );
@@ -63,7 +62,6 @@ function Chart({ data, values, extended }) {
   };
 
   const CustomTooltip = ({ active, payload, label }) => {
-    /* console.log(payload,active) */
     let point = null;
     values.forEach((element) => {
       const exists = payload.find(
