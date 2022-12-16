@@ -1,17 +1,17 @@
-import { SET_EXAMPLES } from "../actionTypes/actionTypes";
+import { SET_EXAMPLES } from '../actionTypes/actionTypes';
 
 const initialState = {
-  examples: []
+  examples: [],
 };
 
-export default function displayReducer (state = initialState, action) {
+export default function displayReducer(state = initialState, action) {
   switch (action.type) {
     case SET_EXAMPLES:
       return {
         ...state,
-        examples: action.payload
+        examples: action.payload,
       };
     default:
       return state;
   }
-};
+}

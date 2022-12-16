@@ -1,17 +1,17 @@
-import { SET_DISPLAY } from "../actionTypes/actionTypes";
+import { SET_DISPLAY } from '../actionTypes/actionTypes';
 
 const initialState = {
-  display: 'form'
+  display: 'form',
 };
 
-export default function displayReducer (state = initialState, action) {
+export default function displayReducer(state = initialState, action) {
   switch (action.type) {
     case SET_DISPLAY:
       return {
         ...state,
-        display: action.payload
+        display: action.payload,
       };
     default:
       return state;
   }
-};
+}

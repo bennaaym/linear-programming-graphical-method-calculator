@@ -32,7 +32,6 @@ h2.title {
   color: #61dafb;
 }
 
-
 .constraint {
   height: 50px;
   border: 1px solid #242424;
@@ -62,7 +61,7 @@ h2.title {
   background: none !important;
   padding: 0 !important;
 }
-.error-message{
+.error-message {
   color: #cc0000;
   text-align: left;
 }

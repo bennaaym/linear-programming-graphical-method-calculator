@@ -1,8 +1,8 @@
-import * as actionTypes from '../actionTypes/actionTypes'
+import * as actionTypes from '../actionTypes/actionTypes';
 
 export const setResult = (result) => {
-    return {
-        type: actionTypes.SET_RESULT,
-        payload: result
-    }
-}
+  return {
+    type: actionTypes.SET_RESULT,
+    payload: result,
+  };
+};
