@@ -89,6 +89,9 @@ function Chart({ data, values, extended }) {
 
   const denseValues = useMemo(() => generateDenseArray(values), [values]);
 
+  console.log({ denseValues });
+  console.log(values);
+
   return (
     <>
       <ResponsiveContainer width="100%" aspect={3}>
