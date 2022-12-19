@@ -17,11 +17,9 @@ const SelectBox = ({
     <>
       <h2 style={{ textAlign: 'left', fontSize: 20 }}>{title || ''}</h2>
       <select
-        defaultValue={selected}
         value={selected}
         onChange={(e) => handleChange(e)}
         className="form-select"
-        aria-label="Default select example"
       >
         {fields.map((item, i) => (
           <option key={i} value={item}>

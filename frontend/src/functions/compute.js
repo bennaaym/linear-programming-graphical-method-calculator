@@ -206,3 +206,16 @@ export const addMaxValues = (constraints, points) => {
   });
   return temp;
 };
+
+export const generateDenseArray = (values) => {
+  const denseValues = Array(Math.pow(values.length, 2)).fill(0);
+  let rightPointer = denseValues.length - 1;
+  for (let i = 0; i < values.length; i++) {
+    denseValues[i] = values[i];
+    for (let j = 0; j < values.length; j++) {
+      if (i === j) continue;
+      denseValues[rightPointer--] = values[j];
+    }
+  }
+  return denseValues;
+};

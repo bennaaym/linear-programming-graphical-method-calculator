@@ -1,5 +1,4 @@
 import {
-  LineChart,
   ResponsiveContainer,
   Legend,
   Tooltip,
@@ -11,8 +10,8 @@ import {
   ReferenceLine,
   ComposedChart,
 } from 'recharts';
-import { getMaxValues } from '../functions/compute';
-
+import { generateDenseArray, getMaxValues } from '../functions/compute';
+import { useMemo } from 'react';
 var colors = ['purple', 'green', 'blue', 'orange', 'yellow', 'pink'];
 
 function Chart({ data, values, extended }) {
@@ -41,7 +40,7 @@ function Chart({ data, values, extended }) {
   });
 
   const CustomizedDot = (props) => {
-    const { cx, cy, stroke, payload, value, name } = props;
+    const { cx, cy, payload } = props;
     const point = values.find(
       (item) => payload.x1 === item.x1 && payload.x2 === item.x2
     );
@@ -78,7 +77,6 @@ function Chart({ data, values, extended }) {
         </div>
       );
     }
-
     return null;
   };
 
@@ -89,13 +87,20 @@ function Chart({ data, values, extended }) {
     };
   });
 
+  const denseValues = useMemo(() => generateDenseArray(values), [values]);
+
   return (
     <>
       <ResponsiveContainer width="100%" aspect={3}>
-        <ComposedChart
-          data={values}
-          margin={{ top: 20, right: 50, left: 20, bottom: 5 }}
-        >
+        <ComposedChart margin={{ top: 20, right: 50, left: 20, bottom: 5 }}>
+          <Area
+            data={denseValues}
+            type="linearClosed"
+            dataKey="x2"
+            fill="#8e8e8e"
+            stroke="transparent"
+          />
+
           <CartesianGrid />
           <XAxis
             startOffset={0}
@@ -109,7 +114,6 @@ function Chart({ data, values, extended }) {
           <YAxis type="number" domain={[0, max[1]]} tickCount={12}></YAxis>
           <Legend />
           <Tooltip content={<CustomTooltip />} />
-          {/* <Tooltip /> */}
           {sortedData.map((c, i) => (
             <>
               <ReferenceLine x={0} stroke="blue" />
@@ -133,14 +137,6 @@ function Chart({ data, values, extended }) {
               <ReferenceLine y={0} stroke="red" />
             </>
           ))}
-          {values.length > 2 && (
-            <Area
-              type="linearClosed"
-              dataKey="x2"
-              fill="#8884d8"
-              stroke="transparent"
-            />
-          )}
         </ComposedChart>
       </ResponsiveContainer>
     </>
