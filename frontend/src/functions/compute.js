@@ -212,14 +212,27 @@ export const generateDenseArray = (values) => {
   let rightPointer = denseValues.length - 1;
   let leftPointer = 0;
 
-  for (let i = 0; i < values.length; i++) {
-    for (let j = 0; j < values.length; j++) {
-      if (i === j) continue;
-      // add elements to the front of the dense array
-      denseValues[leftPointer++] = values[i];
-      // add elements to the end of the dense array
-      denseValues[rightPointer--] = values[j];
+  if (values.length <= 4) {
+    for (let i = 0; i < values.length; i++) {
+      for (let j = 0; j < values.length; j++) {
+        if (i === j) continue;
+        // add elements to the front of the dense array
+        denseValues[leftPointer++] = values[i];
+        // add elements to the end of the dense array
+        denseValues[rightPointer--] = values[j];
+      }
+    }
+  } else {
+    for (let i = 0; i < values.length - Math.floor(values.length / 2); i++) {
+      for (let j = i; j < values.length; j++) {
+        if (i === j) continue;
+        // add elements to the front of the dense array
+        denseValues[leftPointer++] = values[i];
+        // add elements to the end of the dense array
+        denseValues[rightPointer--] = values[j];
+      }
     }
   }
+
   return denseValues;
 };
