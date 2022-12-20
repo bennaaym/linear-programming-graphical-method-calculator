@@ -98,7 +98,7 @@ function Chart({ data, values, extended }) {
             type="linearClosed"
             dataKey="x2"
             fill="#8e8e8e"
-            stroke="red"
+            stroke="transparent"
           />
 
           <CartesianGrid />
