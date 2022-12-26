@@ -53,7 +53,7 @@ const Parameteres = () => {
         .map((item) => {
           return {
             ...item,
-            sign: '<=' ? '≤' : '≥',
+            sign: item.sign === '<=' ? '≤' : '≥',
           };
         });
       if (extras.length > 2) extras = extras.slice(2, extras.length);
@@ -78,7 +78,7 @@ const Parameteres = () => {
         extraCons: extras,
       });
     }
-  }, [selectedExample]);
+  }, [selectedExample, predefinedExamples]);
 
   const resetValues = {
     objFuncA: 0,
